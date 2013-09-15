@@ -79,6 +79,10 @@ define DBUS_INSTALL_TARGET_FIXUP
 	ln -sf /tmp/dbus $(TARGET_DIR)/var/lib/dbus
 endef
 
+define DBUS_PERMISSIONS
+/usr/libexec/dbus-daemon-launch-helper f 4750 0 81 - - - - -
+endef
+
 DBUS_POST_INSTALL_TARGET_HOOKS += DBUS_INSTALL_TARGET_FIXUP
 
 define DBUS_INSTALL_INIT_SYSV
