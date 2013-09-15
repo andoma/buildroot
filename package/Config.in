@@ -881,4 +881,8 @@ source "package/vim/Config.in"
 endif
 endmenu
 
+menu "STOS (Showtime OS)"
+source "package/showtime-shell/Config.in"
+endmenu
+
 endmenu
