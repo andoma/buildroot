@@ -1,0 +1,18 @@
+#!/bin/sh
+
+start() {
+	/usr/sbin/showtime-shell -p
+	mkdir -p /stos/persistent/connman
+}
+
+case "$1" in
+  start)
+  	start
+	;;
+  *)
+	echo "Usage: $0 {start}"
+	exit 1
+esac
+
+exit $?
+
