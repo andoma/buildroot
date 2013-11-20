@@ -1,10 +1,12 @@
-SHOWTIME_SHELL_VERSION = 6b2d33bf78473af8c8adbcb9896d9ae4ce96fcc1
+SHOWTIME_SHELL_VERSION = 84f5b222b8039884ecdbfdab80a4e89f3c939aef
 SHOWTIME_SHELL_SITE = git://github.com/andoma/showtime-shell.git
 SHOWTIME_SHELL_LICENSE = GPLv3
 
 define SHOWTIME_SHELL_INSTALL_INIT_SYSV
 	$(INSTALL) -D -m 755 package/showtime-shell/S60showtime-shell \
 		$(TARGET_DIR)/etc/init.d/S60showtime-shell
+	$(INSTALL) -D -m 755 package/showtime-shell/S44showtime-shell \
+		$(TARGET_DIR)/etc/init.d/S44showtime-shell
 endef
 
 
