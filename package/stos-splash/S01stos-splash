@@ -1,0 +1,17 @@
+#!/bin/sh
+
+start() {
+	/usr/sbin/stos-splash -s "Showtime OS booting..." -f /usr/share/fonts/Audiowide-Regular.ttf -d
+}
+
+case "$1" in
+  start)
+  	start
+	;;
+  *)
+	echo "Usage: $0 {start}"
+	exit 1
+esac
+
+exit $?
+

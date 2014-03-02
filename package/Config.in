@@ -1344,6 +1344,7 @@ endmenu
 
 menu "STOS (Showtime OS)"
 source "package/showtime-shell/Config.in"
+source "package/stos-splash/Config.in"
 endmenu
 
 endmenu
