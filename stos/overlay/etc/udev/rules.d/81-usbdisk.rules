@@ -1,0 +1,2 @@
+ENV{ID_FS_USAGE}=="filesystem", ENV{ID_BUS}=="usb", ACTION=="add",    RUN+="/usr/sbin/usbfs.sh add"
+ENV{ID_FS_USAGE}=="filesystem", ENV{ID_BUS}=="usb", ACTION=="remove", RUN+="/usr/sbin/usbfs.sh remove"
