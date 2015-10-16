@@ -19,11 +19,6 @@ OPROFILE_BINARIES = \
 	utils/op-check-perfevents libabi/opimport \
 	pe_counting/ocount
 
-# No perf_events support in kernel for avr32
-ifneq ($(BR2_avr32),y)
-OPROFILE_BINARIES += pe_profiling/operf
-endif
-
 ifeq ($(BR2_i386),y)
 OPROFILE_ARCH = i386
 endif
@@ -45,6 +40,12 @@ OPROFILE_DEPENDENCIES = popt binutils host-pkgconf
 ifeq ($(BR2_PACKAGE_LIBPFM4),y)
 OPROFILE_DEPENDENCIES += libpfm4
 endif
+
+# When getext is enabled, popt links with -lintl, specifies it in its
+# popt.pc and has done so for the past 6+ years. But oprofile does not
+# use pkconfig to find popt, so misses -lintl, which is important for
+# a static build. We have to do the call to pkgconfig manually...
+OPROFILE_CONF_ENV += LIBS="`$(PKG_CONFIG_HOST_BINARY) --libs popt`"
 
 define OPROFILE_INSTALL_TARGET_CMDS
 	$(INSTALL) -d -m 755 $(TARGET_DIR)/usr/bin
