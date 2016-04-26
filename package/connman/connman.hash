@@ -1,2 +1,3 @@
 # From https://www.kernel.org/pub/linux/network/connman/sha256sums.asc
 sha256	2a5a69693566f7fd59b2e677fa89356ada6d709998aa665caef8707b1e7a8594  connman-1.29.tar.xz
+sha256  3185864c73206a6033d12e9f583689dcd03f714a40a58333709d3f74a4e0934c  connman-1.32.tar.xz
